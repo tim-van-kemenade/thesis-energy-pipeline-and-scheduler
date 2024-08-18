@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: scheduler
+  name: scheduler
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: scheduler
+      name: scheduler
+    spec:
+      containers:
+        - name: scheduler
+          image: 192.168.1.101:5000/scheduler

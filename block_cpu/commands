@@ -1,0 +1,9 @@
+sudo docker build . -t 192.168.1.101:5000/block_cpu
+sudo docker push 192.168.1.101:5000/block_cpu
+
+kubectl apply -f specs/
+
+docker run --rm -e 192.168.1.101:5000/block_cpu:latest
+
+mypod=$(kubectl get pods -l app=rustapp --output=jsonpath={.items..metadata.name})
+kubectl port-forward $mypod 8080:8080

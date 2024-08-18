@@ -1,0 +1,10 @@
+Changes to original project (https://github.com/kelseyhightower/scheduler):
+- Dockerfile: removed line 2 'MAINTAINER <maintainer>'.
+- bestprice.go: removed and replaced with bestpod.go.
+- bestpod.go: select pod according to energy metrics using real and heuristic values as described in README.md##Energy based pod selection.
+- main.go: changed line 24 value of schedulerName to "kubepower"
+- processor.go: changed line 72 'node, err := bestPrice(nodes)' to 'node, err := selectNode(nodes)'
+- README.md: added explanation for the pod selection that uses energy metrics.
+- types.go: added Prometheus query JSON response.
+- deployments/scheduler.yaml: changed image destination to local repository and removed kubectl image.
+- annotator: removed.

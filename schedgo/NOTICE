@@ -1,0 +1,1 @@
+Changes to original project (https://github.com/kelseyhightower/scheduler) to make it schedule based on energy from Prometheus containing Scaphandre metrics.

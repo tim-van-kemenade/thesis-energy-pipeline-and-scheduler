@@ -1,0 +1,12 @@
+OLD
+GOOS=linux bash build
+NEW
+GOOS=linux
+GOARCH=amd64
+export PATH=$HOME/bin/go/bin:$PATH
+sudo docker build . -t 192.168.1.101:5000/escheduler
+sudo docker push 192.168.1.101:5000/escheduler
+rm escheduler
+
+nohup kubectl port-forward --namespace=monitoring --address=192.168.221.2,192.168.221.2 svc/prometheus-k8s 9090:9090 > /dev/null 2>&1 &
+kubectl create -f deployment.yaml

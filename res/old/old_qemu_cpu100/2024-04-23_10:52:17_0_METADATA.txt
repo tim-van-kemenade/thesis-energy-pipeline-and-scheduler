@@ -1,0 +1,5 @@
+Continuum deployment time 34.788254261016846
+Scaphandre open process time 4.542330741882324
+Sync metrics time 300.0419886112213
+VMs active 3
+VMs experiment 2

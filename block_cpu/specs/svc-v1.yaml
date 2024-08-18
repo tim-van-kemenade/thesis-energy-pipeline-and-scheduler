@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Service
+metadata:  
+  name: block-cpu
+spec:
+  selector:    
+    app: block-cpu
+  type: ClusterIP

@@ -1,0 +1,129 @@
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: escheduler
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: escheduler-as-kube-scheduler
+subjects:
+- kind: ServiceAccount
+  name: escheduler
+  namespace: kube-system
+roleRef:
+  kind: ClusterRole
+  name: system:kube-scheduler
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: escheduler-as-volume-scheduler
+subjects:
+- kind: ServiceAccount
+  name: escheduler
+  namespace: kube-system
+roleRef:
+  kind: ClusterRole
+  name: system:volume-scheduler
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: escheduler-extension-apiserver-authentication-reader
+  namespace: kube-system
+roleRef:
+  kind: Role
+  name: extension-apiserver-authentication-reader
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: ServiceAccount
+  name: escheduler
+  namespace: kube-system
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: escheduler-config
+  namespace: kube-system
+data:
+  escheduler-config.yaml: |
+    apiVersion: kubescheduler.config.k8s.io/v1beta2
+    kind: KubeSchedulerConfiguration
+    profiles:
+      - schedulerName: escheduler
+    leaderElection:
+      leaderElect: false    
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    component: scheduler
+    tier: control-plane
+  name: escheduler
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      component: scheduler
+      tier: control-plane
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        component: scheduler
+        tier: control-plane
+        version: second
+    spec:
+      nodeSelector:
+        node-role.kubernetes.io/control-plane: ""
+      tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        operator: Equal
+        effect: NoSchedule
+      # affinity:
+      #   nodeAffinity:
+      #     requiredDuringSchedulingIgnoredDuringExecution:
+      #       nodeSelectorTerms:
+      #         matchExpressions:
+      #         - key: dedicated
+      #           operator: Equal
+      #           values: ["master"]
+      serviceAccountName: escheduler
+      containers:
+      - name: escheduler
+        # command:
+        # - /usr/local/bin/kube-scheduler
+        # - --config=/etc/kubernetes/escheduler/escheduler-config.yaml
+        image: 192.168.1.101:5000/escheduler:latest
+        imagePullPolicy: Always
+        # livenessProbe:
+        #   httpGet:
+        #     path: /healthz
+        #     port: 10259
+        #     scheme: HTTPS
+        #   initialDelaySeconds: 15
+        # readinessProbe:
+        #   httpGet:
+        #     path: /healthz
+        #     port: 10259
+        #     scheme: HTTPS
+        resources:
+          requests:
+            cpu: '0.1'
+        securityContext:
+          privileged: false
+      #   volumeMounts:
+      #     - name: config-volume
+      #       mountPath: /etc/kubernetes/escheduler
+      # hostNetwork: false
+      # hostPID: false
+      # volumes:
+      #   - name: config-volume
+      #     configMap:
+      #       name: escheduler-config

@@ -1,0 +1,15 @@
+__pycache__
+.terraform
+*.tfstate*
+*.backup
+*.lock.hcl
+id_rsa*
+*.tf
+.tmp
+logs/
+*package-lock.json
+*node_modules
+scripts/*.csv
+scripts/*.pdf
+*.out
+.idea

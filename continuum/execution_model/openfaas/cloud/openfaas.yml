@@ -1,0 +1,40 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Install OpenFaaS
+  hosts: cloudcontroller
+  become: true
+  tasks:
+    - name: Install Arkade
+      shell: curl -SLsf https://get.arkade.dev/ | sudo sh
+
+    - name: Create openfaas namespace
+      command: kubectl create ns openfaas
+
+    - name: Create openfaas-fn namespace
+      command: kubectl create ns openfaas-fn
+
+    - name: Install OpenFaaS through Arkade
+      command: >
+        arkade install openfaas --set openfaasPRO=False
+
+    - name: Install OpenFaaS CLI
+      shell: curl -SLsf https://cli.openfaas.com | sudo sh
+
+    - name: kubectl - gateway
+      command: >
+        kubectl rollout status -n openfaas deploy/gateway
+
+    - name: Add OpenFaaS Prefix to bashrc
+      lineinfile:
+        dest: "/home/{{ username }}/.bashrc"
+        state: present
+        line: "export OPENFAAS_PREFIX=redplanet00"
+
+    - name: Enable OpenFaaS port forwarding
+      shell: |
+        nohup kubectl port-forward -n openfaas svc/gateway 8080:8080 > /dev/null 2>&1 &
+
+    - name: Login to OpenFaaS
+      shell: |
+        kubectl get secret -n openfaas basic-auth -o jsonpath="{.data.basic-auth-password}" | \
+          base64 --decode | faas-cli login --username admin --password-stdin

@@ -1,0 +1,6 @@
+run 0-2 running with 80 paused nodes and 5 running
+
+Start measurement kube_sca_sched/1_600 with 600 iterations with vms: cloud_controller_tkemenade, cloud0_tkemenade
+thread 'main' panicked at src/exporters/qemu.rs:127:43:
+called `Result::unwrap()` on an `Err` value: ParseIntError { kind: Empty }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

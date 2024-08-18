@@ -1,0 +1,6 @@
+Continuum deployment time 183.22228169441223
+Stack setup time 203.4641273021698
+Scaphandre open process time 4.174237251281738
+Sync metrics time 600.1092579364777
+VMs active 89
+VMs experiment 2

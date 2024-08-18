@@ -1,0 +1,3 @@
+Continuum deployment time 36.14383268356323
+Scaphandre open process time 0.006227731704711914
+Sync metrics time 300.06721019744873

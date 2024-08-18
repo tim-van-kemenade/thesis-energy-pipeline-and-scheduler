@@ -1,0 +1,450 @@
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "alertmanager",
+                    "endpoint": "web",
+                    "instance": "10.244.1.10:9093",
+                    "job": "alertmanager-main",
+                    "namespace": "monitoring",
+                    "pod": "alertmanager-main-2",
+                    "service": "alertmanager-main"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "alertmanager",
+                    "endpoint": "web",
+                    "instance": "10.244.1.8:9093",
+                    "job": "alertmanager-main",
+                    "namespace": "monitoring",
+                    "pod": "alertmanager-main-0",
+                    "service": "alertmanager-main"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "alertmanager",
+                    "endpoint": "web",
+                    "instance": "10.244.1.9:9093",
+                    "job": "alertmanager-main",
+                    "namespace": "monitoring",
+                    "pod": "alertmanager-main-1",
+                    "service": "alertmanager-main"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "config-reloader",
+                    "endpoint": "reloader-web",
+                    "instance": "10.244.1.10:8080",
+                    "job": "alertmanager-main",
+                    "namespace": "monitoring",
+                    "pod": "alertmanager-main-2",
+                    "service": "alertmanager-main"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "config-reloader",
+                    "endpoint": "reloader-web",
+                    "instance": "10.244.1.11:8080",
+                    "job": "prometheus-k8s",
+                    "namespace": "monitoring",
+                    "pod": "prometheus-k8s-0",
+                    "service": "prometheus-k8s"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "config-reloader",
+                    "endpoint": "reloader-web",
+                    "instance": "10.244.1.12:8080",
+                    "job": "prometheus-k8s",
+                    "namespace": "monitoring",
+                    "pod": "prometheus-k8s-1",
+                    "service": "prometheus-k8s"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "config-reloader",
+                    "endpoint": "reloader-web",
+                    "instance": "10.244.1.8:8080",
+                    "job": "alertmanager-main",
+                    "namespace": "monitoring",
+                    "pod": "alertmanager-main-0",
+                    "service": "alertmanager-main"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "config-reloader",
+                    "endpoint": "reloader-web",
+                    "instance": "10.244.1.9:8080",
+                    "job": "alertmanager-main",
+                    "namespace": "monitoring",
+                    "pod": "alertmanager-main-1",
+                    "service": "alertmanager-main"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "coredns",
+                    "endpoint": "metrics",
+                    "instance": "10.244.0.2:9153",
+                    "job": "kube-dns",
+                    "namespace": "kube-system",
+                    "pod": "coredns-5d78c9869d-7xc24",
+                    "service": "kube-dns"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "coredns",
+                    "endpoint": "metrics",
+                    "instance": "10.244.0.3:9153",
+                    "job": "kube-dns",
+                    "namespace": "kube-system",
+                    "pod": "coredns-5d78c9869d-qvj6l",
+                    "service": "kube-dns"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "grafana",
+                    "endpoint": "http",
+                    "instance": "10.244.1.3:3000",
+                    "job": "grafana",
+                    "namespace": "monitoring",
+                    "pod": "grafana-6ccd547d9-fwtls",
+                    "service": "grafana"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "kube-rbac-proxy",
+                    "endpoint": "https",
+                    "instance": "10.244.1.2:9115",
+                    "job": "blackbox-exporter",
+                    "namespace": "monitoring",
+                    "pod": "blackbox-exporter-686c55cf76-whssw",
+                    "service": "blackbox-exporter"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "kube-rbac-proxy",
+                    "endpoint": "https",
+                    "instance": "10.244.1.7:8443",
+                    "job": "prometheus-operator",
+                    "namespace": "monitoring",
+                    "pod": "prometheus-operator-549dbd7c94-fbj54",
+                    "service": "prometheus-operator"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "kube-rbac-proxy",
+                    "endpoint": "https",
+                    "instance": "cloud0tkemenade",
+                    "job": "node-exporter",
+                    "namespace": "monitoring",
+                    "pod": "node-exporter-h5j7j",
+                    "service": "node-exporter"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "kube-rbac-proxy",
+                    "endpoint": "https",
+                    "instance": "cloudcontrollertkemenade",
+                    "job": "node-exporter",
+                    "namespace": "monitoring",
+                    "pod": "node-exporter-nqmbl",
+                    "service": "node-exporter"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "kube-rbac-proxy-main",
+                    "instance": "10.244.1.4:8443",
+                    "job": "kube-state-metrics"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "kube-rbac-proxy-self",
+                    "endpoint": "https-self",
+                    "instance": "10.244.1.4:9443",
+                    "job": "kube-state-metrics",
+                    "namespace": "monitoring",
+                    "pod": "kube-state-metrics-54d7fb5478-4kpzv",
+                    "service": "kube-state-metrics"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "prometheus",
+                    "endpoint": "web",
+                    "instance": "10.244.1.11:9090",
+                    "job": "prometheus-k8s",
+                    "namespace": "monitoring",
+                    "pod": "prometheus-k8s-0",
+                    "service": "prometheus-k8s"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "prometheus",
+                    "endpoint": "web",
+                    "instance": "10.244.1.12:9090",
+                    "job": "prometheus-k8s",
+                    "namespace": "monitoring",
+                    "pod": "prometheus-k8s-1",
+                    "service": "prometheus-k8s"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "prometheus-adapter",
+                    "endpoint": "https",
+                    "instance": "10.244.1.5:6443",
+                    "job": "prometheus-adapter",
+                    "namespace": "monitoring",
+                    "pod": "prometheus-adapter-64884b4488-86b6h",
+                    "service": "prometheus-adapter"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "prometheus-adapter",
+                    "endpoint": "https",
+                    "instance": "10.244.1.6:6443",
+                    "job": "prometheus-adapter",
+                    "namespace": "monitoring",
+                    "pod": "prometheus-adapter-64884b4488-rrglg",
+                    "service": "prometheus-adapter"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "endpoint": "https",
+                    "instance": "192.168.221.2:6443",
+                    "job": "apiserver",
+                    "namespace": "default",
+                    "service": "kubernetes"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "endpoint": "https-metrics",
+                    "instance": "192.168.221.2:10250",
+                    "job": "kubelet",
+                    "metrics_path": "/metrics",
+                    "namespace": "kube-system",
+                    "node": "cloudcontrollertkemenade",
+                    "service": "kubelet"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "endpoint": "https-metrics",
+                    "instance": "192.168.221.2:10250",
+                    "job": "kubelet",
+                    "metrics_path": "/metrics/cadvisor",
+                    "namespace": "kube-system",
+                    "node": "cloudcontrollertkemenade",
+                    "service": "kubelet"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "endpoint": "https-metrics",
+                    "instance": "192.168.221.2:10250",
+                    "job": "kubelet",
+                    "metrics_path": "/metrics/probes",
+                    "namespace": "kube-system",
+                    "node": "cloudcontrollertkemenade",
+                    "service": "kubelet"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "endpoint": "https-metrics",
+                    "instance": "192.168.221.3:10250",
+                    "job": "kubelet",
+                    "metrics_path": "/metrics",
+                    "namespace": "kube-system",
+                    "node": "cloud0tkemenade",
+                    "service": "kubelet"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "endpoint": "https-metrics",
+                    "instance": "192.168.221.3:10250",
+                    "job": "kubelet",
+                    "metrics_path": "/metrics/cadvisor",
+                    "namespace": "kube-system",
+                    "node": "cloud0tkemenade",
+                    "service": "kubelet"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "endpoint": "https-metrics",
+                    "instance": "192.168.221.3:10250",
+                    "job": "kubelet",
+                    "metrics_path": "/metrics/probes",
+                    "namespace": "kube-system",
+                    "node": "cloud0tkemenade",
+                    "service": "kubelet"
+                },
+                "value": [
+                    1714899169.857,
+                    "1"
+                ]
+            }
+        ]
+    }
+}
